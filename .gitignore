@@ -1,0 +1,9 @@
+#ignoring node modules
+**/node_modules
+
+#ignoring package lock json file
+**/package-lock.json
+
+#ignoring vscode config files
+**/.vscode
+**/.editorconfig
