@@ -1,1 +1,33 @@
 <app-navbar></app-navbar>
+<section class="bg-gray-950 min-h-screen py-16 px-6 sm:px-10 lg:px-24">
+  <div class="max-w-7xl mx-auto flex flex-col items-center">
+    <!-- Big Heading -->
+    <h1
+      class="text-4xl sm:text-5xl font-bold text-center mb-14 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600"
+    >
+      Shows how wind energy capacity is growing globally over time
+    </h1>
+
+    <!-- Card: Chart + Text Grid -->
+    <div
+      class="bg-gray-800 rounded-2xl p-8 shadow-md border border-cyan-400/30 w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+    >
+      <!-- Left: Bar Chart -->
+      <div id="barChart" class="w-full h-[400px]"></div>
+
+      <!-- Right: Insight Paragraph -->
+      <div class="flex flex-col justify-center">
+        <h2 class="text-2xl font-bold text-cyan-300 mb-4">
+          Wind Energy Expansion Insights
+        </h2>
+        <p class="text-gray-300 text-base leading-relaxed">
+          Over the past decade, global wind energy capacity has surged, fueled
+          by advances in turbine technologies, growing environmental awareness,
+          and strategic investments. This consistent growth trajectory
+          highlights the crucial role wind energy will play in meeting future
+          energy demands sustainably and cost-effectively.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

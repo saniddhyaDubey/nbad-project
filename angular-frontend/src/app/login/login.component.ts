@@ -19,26 +19,21 @@ export class LoginComponent {
   ) {}
 
   submitForm() {
-    try {
-      const data = {
-        username: this.userUsername,
-        password: this.userPassword,
-      };
+    const data = {
+      username: this.userUsername,
+      password: this.userPassword,
+    };
 
-      this.http
-        .post("http://localhost:3000/login", data)
-        .subscribe((response: any) => {
-          if (response.status == 200) {
-            localStorage.setItem("userToken", response.token);
-            this.router.navigate(["/dashboard"]);
-          } else {
-            // think about this if have to do something else?
-            console.log("Wrong credentials!!!");
-            this.router.navigate(["/login"]);
-          }
-        });
-    } catch (e) {
-      console.log("Error while logging: ", e);
-    }
+    this.http.post("http://localhost:3000/login", data).subscribe({
+      next: (response: any) => {
+        if (response.status == 200) {
+          localStorage.setItem("userToken", response.token);
+          this.router.navigate(["/dashboard"]);
+        } else {
+          console.log("Wrong credentials!!!");
+          this.router.navigate(["/login"]);
+        }
+      },
+    });
   }
 }
