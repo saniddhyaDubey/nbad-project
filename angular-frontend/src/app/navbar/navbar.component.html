@@ -1,0 +1,43 @@
+<nav class="bg-gray-900 text-gray-300 shadow-md w-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Left Side Links -->
+      <div class="flex space-x-6">
+        <a
+          href="/dashboard"
+          class="hover:text-cyan-400 transition-colors duration-300 text-sm font-medium"
+          >Dashboard</a
+        >
+        <a
+          href="/summary"
+          class="hover:text-cyan-400 transition-colors duration-300 text-sm font-medium"
+          >Summary</a
+        >
+        <a
+          href="/reports"
+          class="hover:text-cyan-400 transition-colors duration-300 text-sm font-medium"
+          >Reports</a
+        >
+      </div>
+
+      <!-- Center Logo -->
+      <div class="flex-1 flex justify-center">
+        <span
+          class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 tracking-widest"
+        >
+          s08
+        </span>
+      </div>
+
+      <!-- Right Side Sign Out -->
+      <div class="flex space-x-4">
+        <button
+          (click)="logoutUser()"
+          class="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-400 hover:to-pink-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:shadow-lg transition-all duration-300 text-sm"
+        >
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
