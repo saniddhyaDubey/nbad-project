@@ -7,7 +7,8 @@ const bcrypt = require("bcrypt");
 const jwt_secretKey = "nbad-end-sem-project";
 
 //TODO: Connect the database query!
-const mongoDbURI = "mongodb://localhost:27017/nbad";
+const mongoDbURI =
+  "mongodb+srv://sdubey5:Dubey2024@endsemproject.0fahpfu.mongodb.net/";
 
 const app = express();
 const PORT = 3000;
@@ -124,7 +125,7 @@ app.post("/login", jsonParser, async (req, res) => {
   }
 
   const user_token = jwt.sign({ username }, jwt_secretKey, {
-    expiresIn: "1h",
+    expiresIn: "3m",
   });
 
   return res.json({

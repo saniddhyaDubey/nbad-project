@@ -9,6 +9,12 @@ export const checkLoginGuard: CanActivateFn = (route, state) => {
   if (!token) {
     return true;
   } else {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    const expiresAt = payload.exp * 1000;
+    if (Date.now() > expiresAt) {
+      localStorage.removeItem("userToken");
+      return true;
+    }
     router.navigate(["/dashboard"]);
     return false;
   }
