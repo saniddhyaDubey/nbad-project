@@ -24,4 +24,5 @@ export const routes: Routes = [
     component: ReportsComponent,
     canActivate: [checkTokenGuard],
   },
+  { path: "**", redirectTo: "login" },
 ];

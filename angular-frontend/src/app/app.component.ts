@@ -1,13 +1,18 @@
 import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
-import { HttpClientModule } from "@angular/common/http";
+import { RouterOutlet, NavigationEnd, Router } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet, HttpClientModule],
+  imports: [RouterOutlet, NavbarComponent, CommonModule],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
 })
 export class AppComponent {
-  title = "angular-frontend";
+  constructor(private router: Router) {}
+
+  isLoginRoute(): boolean {
+    return this.router.url.startsWith("/login");
+  }
 }

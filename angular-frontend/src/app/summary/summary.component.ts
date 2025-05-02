@@ -27,7 +27,7 @@ export class SummaryComponent implements OnInit {
 
   fetchSummaryData(): Promise<void> {
     return new Promise((resolve, reject) => {
-      this.http.get<any[]>("http://localhost:3000/summary").subscribe({
+      this.http.get<any[]>("http://localhost:3000/api/summary").subscribe({
         next: (response) => {
           this.summaryData = response;
           resolve();

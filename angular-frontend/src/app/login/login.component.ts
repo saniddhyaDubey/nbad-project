@@ -24,7 +24,7 @@ export class LoginComponent {
       password: this.userPassword,
     };
 
-    this.http.post("http://localhost:3000/login", data).subscribe({
+    this.http.post("http://localhost:3000/api/login", data).subscribe({
       next: (response: any) => {
         if (response.status == 200) {
           localStorage.setItem("userToken", response.token);

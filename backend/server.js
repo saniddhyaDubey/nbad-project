@@ -7,8 +7,7 @@ const bcrypt = require("bcrypt");
 const jwt_secretKey = "nbad-end-sem-project";
 
 //TODO: Connect the database query!
-const mongoDbURI =
-  "mongodb+srv://sdubey5:Dubey2024@endsemproject.0fahpfu.mongodb.net/";
+const mongoDbURI = "LOCALHOST_MONGODB_CONNECTION_STRING";
 
 const app = express();
 const PORT = 3000;
@@ -53,11 +52,11 @@ app.use(cors());
 
 const jsonParser = bodyParser.json();
 
-app.get("/health-check", async (req, res) => {
+app.get("/api/health-check", async (req, res) => {
   res.send({ status: "working!" });
 });
 
-app.get("/setup", async (req, res) => {
+app.get("/api/setup", async (req, res) => {
   try {
     // Collections Pre-filled data!
     const username = "saniddhya";
@@ -107,7 +106,7 @@ app.get("/setup", async (req, res) => {
   }
 });
 
-app.post("/login", jsonParser, async (req, res) => {
+app.post("/api/login", jsonParser, async (req, res) => {
   const { username, password } = req.body;
   if (username != "saniddhya") {
     return res.json({
@@ -134,12 +133,12 @@ app.post("/login", jsonParser, async (req, res) => {
   });
 });
 
-app.get("/summary", async (req, res) => {
+app.get("/api/summary", async (req, res) => {
   const summaryData = await Summary.find({});
   return res.status(200).json(summaryData);
 });
 
-app.get("/reports", async (req, res) => {
+app.get("/api/reports", async (req, res) => {
   const reportsData = await Reports.find({});
   return res.status(200).json(reportsData);
 });

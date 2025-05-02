@@ -27,7 +27,7 @@ export class ReportsComponent implements OnInit {
 
   fetchReportsData(): Promise<void> {
     return new Promise((resolve, reject) => {
-      this.http.get<any[]>("http://localhost:3000/reports").subscribe({
+      this.http.get<any[]>("http://localhost:3000/api/reports").subscribe({
         next: (response) => {
           this.reportsData = response;
           resolve();
